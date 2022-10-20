@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LotusV1.Views.AboutPage"
+             xmlns:vm="clr-namespace:LotusV1.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#7f052a</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="Logo_Lotus.jpg" VerticalOptions="Center" WidthRequest="150" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="LOGIN" HorizontalOptions="Center" FontSize="Title"/>
+                <Entry Placeholder="Usuario" x:Name="Txb_Usuario" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Entry Placeholder="Contraseña" x:Name="Txb_Password" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Label Text="¿Olvidaste la contraseña?" HorizontalOptions="End"/>
+                <Button Margin="0,10,0,0" Text="Iniciar Sesion"
+                        BackgroundColor="#8B7556"
+                        TextColor="White"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
